@@ -1,16 +1,132 @@
 @import url(https://fonts.bunny.net/css?family=poppins:400,600|pt-serif:400,700);
 
 :root {
-	font-size: 62.5%;
-	font-family: var(--font-primary);
-	font-weight: var(--fw-normal);
-	--font-primary: "Poppins", sans-serif;
-	--font-secondary: "PT Serif", serif;
-	--fw-normal: 400;
+	--black: hsl(0, 0%, 0%);
 	--fw-bold: 600;
 	--fw-bolder: 700;
-	--black: hsl(0, 0%, 0%);
-	--font-size-sm: 1.6rem;
-	--font-size: 1.8rem;
+	font-family: var(--font-primary);
+	font-size: 62.5%;
+	font-weight: var(--fw-normal);
+	margin: 0;
+	--fw-normal: 400;
+	padding: 0;
+	--font-primary: "Poppins", sans-serif;
+	--font-secondary: "PT Serif", serif;
 	--font-size-2xl: 3.6rem;
+	--font-size-lg: 1.8rem;
+	--font-size-md: 1.6rem;
+	--font-size-sm: 1.4rem;
+	--font-size-xs: 1.2rem;
+	--font-size-xxs: 1rem;
+}
+
+body {
+	margin: 0 auto;
+	width: 90%
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+header h1 {
+	color: var(--black);
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-2xl);
+	font-weight: var(--fw-bolder);
+	margin-bottom: var(--font-size-2xl);
+}
+
+aside {
+	font-size: var(--font-size-sm);
+}
+
+aside h3 {
+	font-size: var(--font-size-md);
+	font-weight: var(--fw-bold);
+	line-height: 27px;
+	text-transform: uppercase;
+	margin-bottom: var(--font-size-xxs);
+}
+
+footer {
+	text-align: center;
+	padding: 5rem 0;
+	font-size: var(--font-size-xs);
+}
+
+a {
+
+	background: linear-gradient(75deg, #F68D91, #7F45A9);
+	-webkit-background-clip: text;
+	color: transparent;
+
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 6rem 1rem;
+}
+
+.person:nth-child(2n) {
+	margin-top: 3.5rem;
+}
+
+.person {
+	position: relative;
+	padding-right: 2rem;
+}
+
+.person img {
+	width: 100%;
+	max-width: 300px;
+}
+
+.person .role {
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-xxs);
+	position: absolute;
+	margin-left: var(--font-size-xxs);
+	right: 0;
+	text-transform: uppercase;
+	top: 0;
+	writing-mode: vertical-rl;
+}
+
+@media screen and (min-width: 992px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		width: 60%;
+	}
+	.container {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 6rem 3rem;
+	}
+
+	.person:nth-child(3n -1) {
+		margin-top: 10rem;
+	}
+
+	.person img {
+		margin-right: 0;
+	}
+
+	header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	aside {
+		font-size: var(--font-size-md);
+		width: max-content;
+		max-width: 40rem;
+		padding-right: 2rem;
+	}
 }
